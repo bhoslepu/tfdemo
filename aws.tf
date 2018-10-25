@@ -10,7 +10,7 @@ provider "aws" {
 
 # terraform {
 #   backend "s3" {
-#     bucket = "petclinic"
+#     bucket = "tfdemo"
 #     key    = "state/terraform.tfstate"
 #     region = "us-east-1"
 #   }

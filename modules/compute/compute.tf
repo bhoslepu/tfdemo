@@ -7,7 +7,7 @@ module "app" {
   key_name       = "${var.region-key}"
   ami            = "${module.findami.amzami}"
   subnet-id      = "${var.private-subnet1-id}"
-  security-group = ["${var.petclinic-app-sg}"]
+  security-group = ["${var.tfdemo-app-sg}"]
   az             = "${var.az1}"
   env            = "${var.env}"
   id             = "${var.id}"
@@ -22,8 +22,20 @@ module "bastion" {
   key_name       = "${var.region-key}"
   ami            = "${module.findami.amzami}"
   subnet-id      = "${var.public-subnet1-id}"
-  security-group = ["${var.petclinic-bastion-sg}"]
+  security-group = ["${var.tfdemo-bastion-sg}"]
   az             = "${var.az1}"
+  env            = "${var.env}"
+  id             = "${var.id}"
+  region         = "${var.region}"
+}
+
+module "buildeserver" {
+  source         = "./ec2-buildserver"
+  key_name       = "${var.region-key}"
+  ami            = "${module.findami.amzami}"
+  subnet-id      = "${var.public-subnet2-id}"
+  security-group = ["${var.tfdemo-buildserver-sg}"]
+  az             = "${var.az2}"
   env            = "${var.env}"
   id             = "${var.id}"
   region         = "${var.region}"

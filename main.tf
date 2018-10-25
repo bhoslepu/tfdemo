@@ -30,8 +30,8 @@ module "compute" {
   public-subnet2-id        = "${module.network.public-subnet2-id}"
   ebs-size                 = "${var.ebs-size}"
   app-instance-count       = "${var.app-instance-count}"
-  petclinic-app-sg         = "${module.network.petclinic-app-sg}"
-  petclinic-bastion-sg     = "${module.network.petclinic-bastion-sg}"
-  petclinic-buildserver-sg = "${module.network.petclinic-buildserver-sg}"
+  tfdemo-app-sg         = "${module.network.tfdemo-app-sg}"
+  tfdemo-bastion-sg     = "${module.network.tfdemo-bastion-sg}"
+  tfdemo-buildserver-sg = "${module.network.tfdemo-buildserver-sg}"
   app-instance-type        = "${var.app-instance-type}"
 }

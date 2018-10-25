@@ -1,5 +1,5 @@
 variable "name" {
-  default = "petclinic"
+  default = "tfdemo"
 }
 
 variable "ebs-size" {}
@@ -20,6 +20,6 @@ variable "public-subnet1-id" {}
 variable "public-subnet2-id" {}
 variable "app-instance-count" {}
 variable "app-instance-type" {}
-variable "petclinic-app-sg" {}
-variable "petclinic-bastion-sg" {}
-variable "petclinic-buildserver-sg" {}
+variable "tfdemo-app-sg" {}
+variable "tfdemo-bastion-sg" {}
+variable "tfdemo-buildserver-sg" {}

@@ -1,5 +1,5 @@
 variable "name" {
-  default = "petclinic"
+  default = "tfdemo"
 }
 
 variable "az1" {}

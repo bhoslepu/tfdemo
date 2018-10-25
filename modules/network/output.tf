@@ -23,14 +23,14 @@ output "public-subnet2-id" {
   value = "${module.public_subnet.public-subnet2}"
 }
 
-output "petclinic-buildserver-sg" {
-  value = "${module.securitygroup.petclinic-buildserver-sg}"
+output "tfdemo-buildserver-sg" {
+  value = "${module.securitygroup.tfdemo-buildserver-sg}"
 }
 
-output "petclinic-bastion-sg" {
-  value = "${module.securitygroup.petclinic-bastion-sg}"
+output "tfdemo-bastion-sg" {
+  value = "${module.securitygroup.tfdemo-bastion-sg}"
 }
 
-output "petclinic-app-sg" {
-  value = "${module.securitygroup.petclinic-app-sg}"
+output "tfdemo-app-sg" {
+  value = "${module.securitygroup.tfdemo-app-sg}"
 }

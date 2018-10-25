@@ -3,9 +3,6 @@ variable "ami" {}
 variable "subnet-id" {}
 variable "env" {}
 variable "id" {}
-variable "instance-count" {
-  default = "1"
-}
 variable "instance-type" {
   default = "t2.micro"
 }
@@ -23,7 +20,6 @@ resource "aws_instance" "ec2-instance" {
   vpc_security_group_ids = ["${var.security-group}"]
   ami                    = "${var.ami}"
   instance_type          = "${var.instance-type}"
-  count                  = "${var.instance-count}"
   availability_zone      = "${var.az}"
 
   tags {
@@ -38,19 +34,7 @@ resource "aws_instance" "ec2-instance" {
     volume_type           = "gp2"
     delete_on_termination = true
   }
-
-  user_data = <<EOT
-#!/bin/bash -v
-amazon-linux-extras install ansible2
-yum update –y
-wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins.io/redhat/jenkins.repo
-sudo rpm --import https://pkg.jenkins.io/redhat/jenkins.io.key          
-yum install -y java
-yum install -y jenkins
-service jenkins start
-EOT
 }
-
 #Instance private IP
 output "private_ips" {
   value = "${aws_instance.ec2-instance.private_ip}"

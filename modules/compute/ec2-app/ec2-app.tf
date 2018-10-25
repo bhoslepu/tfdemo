@@ -51,7 +51,7 @@ EOT
 
 #Instance private IP
 output "private_ips" {
-  value = "${aws_instance.ec2-instance.private_ip}"
+  value = "${aws_instance.ec2-instance.*.private_ip}"
 }
 
 #Instance name
@@ -61,5 +61,5 @@ output "tag_name" {
 
 #Instance ID
 output "instance_id" {
-  value = "${aws_instance.ec2-instance.id}"
+  value = "${aws_instance.ec2-instance.*.id}"
 }
