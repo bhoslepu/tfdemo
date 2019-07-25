@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/bhoslepu/tfdemo.svg?style=svg)](https://circleci.com/gh/bhoslepu/tfdemo)
+
 # tfdemo
 Demo of Infrastructure provisioning using Terraform
 
